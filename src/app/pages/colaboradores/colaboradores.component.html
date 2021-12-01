@@ -1,0 +1,51 @@
+<div class="row" id="row">
+    <div class="col-md-12">
+        <div class="card" id="content">
+            <div class="" id="header">
+                <h4 class="card-title">Gestión de colaboradores</h4>
+                <h6 class="card-subtitle">Agrega, edita o elimina colaboradores</h6> <button class="btn"
+                    routerLink="/crear-colaboradores" id="boton">Agregar</button>
+            </div>
+            <div class="card-body">
+
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nombres</th>
+                            <th scope="col">Grado Academico</th>
+                            <th scope="col">Dirección</th>
+                            <th scope="col">Estado Civil</th>
+                            <th scope="col">Fecha de Nacimiento</th>
+                            <th scope="col">Ver detalle</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor=" let colaborador of colaboradores ">
+
+                            <td>{{colaborador.nombres}}</td>
+                            <td>{{colaborador.gradoAcademico}}</td>
+                            <td>{{colaborador.direccion}}</td>
+                            <td>{{colaborador.estadoCivil}}</td>
+                            <td>{{colaborador.nacimiento}}</td>
+
+                            <td>
+                                <a [routerLink]="['/detalle', colaborador._id]"><svg xmlns="http://www.w3.org/2000/svg"
+                                        width="16" height="16" fill="currentColor" class="bi bi-box-arrow-in-right"
+                                        viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z" />
+                                        <path fill-rule="evenodd"
+                                            d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
+                                    </svg></a>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
